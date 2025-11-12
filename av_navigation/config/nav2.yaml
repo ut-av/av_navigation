@@ -116,7 +116,7 @@ controller_server:
       regenerate_noises: true
       
       AckermannConstraints:
-        min_turning_r: 0.2
+        min_turning_r: 1.2
         
       TrajectoryVisualizer:
         trajectory_step: 5

@@ -60,6 +60,21 @@ def generate_launch_description():
         }.items()
     )
 
+    # Twist to Ackermann converter node
+    # Converts Nav2's cmd_vel output to ackermann_curvature_drive for VESC driver
+    twist_to_ackermann_node = Node(
+        package='av_navigation',
+        executable='twist_to_ackermann',
+        name='twist_to_ackermann_converter',
+        output='screen',
+        parameters=[{
+            'input_topic': 'cmd_vel',  # Nav2 controller output
+            'output_topic': '/ackermann_curvature_drive',  # VESC driver input
+            'wheelbase': 0.324,  # meters, should match vesc.lua config
+            'max_curvature': 5.0,  # 1/meters (inverse of minimum turning radius ~0.2m)
+        }]
+    )
+
     ld = LaunchDescription()
 
     # Add launch argument declarations
@@ -69,5 +84,6 @@ def generate_launch_description():
     
     # Add nodes and other launch actions
     ld.add_action(nav2_launch_cmd)
+    ld.add_action(twist_to_ackermann_node)
 
     return ld
