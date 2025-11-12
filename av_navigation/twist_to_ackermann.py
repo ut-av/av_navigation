@@ -28,8 +28,8 @@ class TwistToAckermannConverter(Node):
         # meters, from vesc.lua
         self.declare_parameter('wheelbase', 0.324)
         # 1/meters (inverse of min turn radius)
-        # using a conservative value of 1.2m turn radius
-        self.declare_parameter('max_curvature', 0.833)
+        # using a conservative value of 1.1m turn radius
+        self.declare_parameter('max_curvature', 0.909)
         
         # Get parameters
         input_topic = self.get_parameter('input_topic').value

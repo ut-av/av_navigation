@@ -28,6 +28,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'twist_to_ackermann = av_navigation.twist_to_ackermann:main',
         ],
     },
 )
