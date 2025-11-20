@@ -71,7 +71,7 @@ def generate_launch_description():
             'input_topic': 'cmd_vel',  # Nav2 controller output
             'output_topic': '/ackermann_curvature_drive',  # VESC driver input
             'wheelbase': 0.324,  # meters, should match vesc.lua config
-            'max_curvature': 5.0,  # 1/meters (inverse of minimum turning radius ~0.2m)
+            'max_curvature': 1.25,  # 1/meters (inverse of minimum turning radius ~0.8m)
         }]
     )
 

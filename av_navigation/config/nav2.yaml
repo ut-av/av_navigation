@@ -116,7 +116,7 @@ controller_server:
       regenerate_noises: true
       
       AckermannConstraints:
-        min_turning_r: 1.1
+        min_turning_r: 0.8
         
       TrajectoryVisualizer:
         trajectory_step: 5
@@ -305,7 +305,7 @@ planner_server:
       angle_quantization_bins: 72
       analytic_expansion_ratio: 3.5
       analytic_expansion_max_length: 3.0
-      minimum_turning_radius: 1.1
+      minimum_turning_radius: 0.8
       reverse_penalty: 0.3  # 显著降低倒车惩罚，允许掉头时倒车
       change_penalty: 0.1   # 降低方向改变惩罚
       non_straight_penalty: 1.0  # 降低非直线惩罚
