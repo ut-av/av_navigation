@@ -1,0 +1,20 @@
+kind: package
+name: av_navigation
+dependencies:
+- rclpy
+- std_msgs
+- sensor_msgs
+- nav_msgs
+- tf2_ros
+- geometry_msgs
+- nav2_msgs
+- nav2_util
+- nav2_costmap_2d
+- nav2_smoother
+- nav2_voxel_grid
+- nav2_behavior_tree
+- nav2_bt_navigator
+- nav2_bringup
+- amrl_msgs
+source_path: .
+ros_distro: jazzy
