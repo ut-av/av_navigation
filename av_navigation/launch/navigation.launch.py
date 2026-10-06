@@ -37,15 +37,15 @@ def generate_launch_description():
     # Print map name
     print(f"Map name: {map_name}")
 
-    # Construct map file path using source directory
-    home_dir = os.path.expanduser('~')
+    # Resolve map and config from the installed package share dir (works in any
+    # workspace, including airfield containers). Requires setup.py to install
+    # the maps/ and config/ data files.
     map_yaml_file = PathJoinSubstitution([
-        os.path.join(home_dir, 'roboracer_ws', 'src', 'av_navigation', 'av_navigation', 'maps'),
+        os.path.join(pkg_av_navigation_dir, 'maps'),
         [map_name, '.yaml']
     ])
 
-    # Construct nav2 config file path using source directory
-    nav2_config_file = os.path.join(home_dir, 'roboracer_ws', 'src', 'av_navigation', 'av_navigation', 'config', 'nav2.yaml')
+    nav2_config_file = os.path.join(pkg_av_navigation_dir, 'config', 'nav2.yaml')
 
     nav2_launch_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(

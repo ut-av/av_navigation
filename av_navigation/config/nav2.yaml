@@ -411,14 +411,14 @@ planner_server:
     
     # Grid-Based Planner (simple, fast)
     GridBased:
-      plugin: "nav2_navfn_planner/NavfnPlanner"
+      plugin: "nav2_navfn_planner::NavfnPlanner"
       tolerance: 0.5       # Goal tolerance (m)
       use_astar: false     # Use Dijkstra instead of A*
       allow_unknown: true  # Allow planning through unknown space
     
     # SMAC Hybrid-A* Planner (advanced, considers vehicle kinematics)
     SmacPlannerHybrid:
-      plugin: "nav2_smac_planner/SmacPlannerHybrid"
+      plugin: "nav2_smac_planner::SmacPlannerHybrid"
       downsample_costmap: false    # Don't downsample costmap
       downsampling_factor: 1       # Downsampling factor (if enabled)
       tolerance: 0.25              # Goal tolerance (m)
@@ -483,15 +483,15 @@ behavior_server:
     # Available Behaviors
     behavior_plugins: ["spin", "backup", "drive_on_heading", "assisted_teleop", "wait"]
     spin:
-      plugin: "nav2_behaviors/Spin"
+      plugin: "nav2_behaviors::Spin"
     backup:
-      plugin: "nav2_behaviors/BackUp"
+      plugin: "nav2_behaviors::BackUp"
     drive_on_heading:
-      plugin: "nav2_behaviors/DriveOnHeading"
+      plugin: "nav2_behaviors::DriveOnHeading"
     wait:
-      plugin: "nav2_behaviors/Wait"
+      plugin: "nav2_behaviors::Wait"
     assisted_teleop:
-      plugin: "nav2_behaviors/AssistedTeleop"
+      plugin: "nav2_behaviors::AssistedTeleop"
     
     # Behavior Parameters
     local_frame: odom

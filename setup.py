@@ -14,6 +14,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('av_navigation/launch/*.launch.py')),
         (os.path.join('share', package_name, 'config'), glob('av_navigation/config/*.yaml')),
+        (os.path.join('share', package_name, 'maps'), glob('av_navigation/maps/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
